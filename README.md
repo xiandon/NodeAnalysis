@@ -15,6 +15,6 @@ allprojects {
 # 配置文件
 ~~~
 ependencies {
-		compile 'com.github.xiandon:NodeAnalysis:v1.0:Tag'
+		compile 'com.github.xiandon:NodeAnalysis:v1.0'
 	}
 ~~~
