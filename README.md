@@ -2,7 +2,7 @@
 enlern物联网2017新版协议解析
 </br>
 
-# android studio根目录
+## android studio根目录
 ~~~
 allprojects {
 		repositories {
@@ -12,7 +12,7 @@ allprojects {
 	}
 ~~~
 
-# 配置文件
+## 配置文件
 ~~~
 ependencies {
 		compile 'com.github.xiandon:NodeAnalysis:v1.0'
