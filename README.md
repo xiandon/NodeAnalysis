@@ -14,7 +14,7 @@ allprojects {
 ### 配置文件
 ~~~
 ependencies {
-		compile 'com.github.xiandon:NodeAnalysis:v1.0'
+		compile 'com.github.xiandon:NodeAnalysis:v2.0.1'
 	}
 ~~~
 
