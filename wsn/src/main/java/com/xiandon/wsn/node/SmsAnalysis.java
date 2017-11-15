@@ -92,7 +92,10 @@ public class SmsAnalysis {
          */
         nodeInfo.setFcs(wsn.substring(wsn.length() - 2, wsn.length()));
 
-
+        /**
+         * 完整协议
+         */
+        nodeInfo.setWsn(wsn);
         return nodeInfo;
     }
 
