@@ -47,7 +47,7 @@ public class SmsAnalysis {
         /**
          * 传感器类型英文编号
          */
-        nodeInfo.setNode_num(wsn.substring(10, 14));
+        nodeInfo.setNode_num(wsn.substring(10, 14) + wsn.substring(28, 30));
 
         /**
          * 来源地址，传感器中文名称
