@@ -1,4 +1,4 @@
-package com.xiandon.wsn;
+package com.xiandon.wsn.node;
 
 /**
  * Created by pen on 2017/11/14.

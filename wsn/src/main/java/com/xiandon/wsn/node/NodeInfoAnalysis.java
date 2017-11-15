@@ -1,4 +1,4 @@
-package com.xiandon.wsn;
+package com.xiandon.wsn.node;
 
 import android.content.Context;
 import android.util.Xml;
