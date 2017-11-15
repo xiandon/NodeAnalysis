@@ -67,6 +67,19 @@ public class NodeInfo {
      */
     private String fcs;
 
+    /**
+     * 完整协议
+     */
+    private String wsn;
+
+    public String getWsn() {
+        return wsn;
+    }
+
+    public void setWsn(String wsn) {
+        this.wsn = wsn;
+    }
+
     public String getN_start() {
         return n_start;
     }
