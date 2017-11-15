@@ -52,7 +52,9 @@ public class SmsAnalysis {
         /**
          * 来源地址，传感器中文名称
          */
-        nodeInfo.setNode_name(getName(wsn.substring(10, 14)));
+        if (wsn.substring(10, 14).equals("0060")) {
+            nodeInfo.setNode_name(getName(wsn.substring(10, 14) + wsn.substring(28, 30)));
+        }
 
         /**
          * 来源地址，传感器节点编号
