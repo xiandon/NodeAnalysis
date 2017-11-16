@@ -3,6 +3,8 @@ package com.xiandon.wsn.node;
 import android.content.Context;
 import android.util.Xml;
 
+import com.xiandon.wsn.agriculture.AgricultureAnalysis;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -52,9 +54,15 @@ public class SmsAnalysis {
         /**
          * 来源地址，传感器中文名称
          */
+        String node_type;
         if (wsn.substring(10, 14).equals("0060")) {
-            nodeInfo.setNode_name(getName(wsn.substring(10, 14) + wsn.substring(28, 30)));
+            node_type = wsn.substring(10, 14) + wsn.substring(28, 30);
+        } else if (wsn.substring(10, 14).equals("0040")) {
+            node_type = wsn.substring(10, 14);
+        } else {
+            node_type = wsn.substring(10, 14);
         }
+        nodeInfo.setNode_name(getName(node_type));
 
         /**
          * 来源地址，传感器节点编号
@@ -80,7 +88,7 @@ public class SmsAnalysis {
         /**
          * 传感器数据
          */
-        nodeInfo.setNode_data(wsn.substring(30, wsn.length() - 4));
+        nodeInfo.setNode_data(wsn.substring(28, wsn.length() - 4));
 
         /**
          * 停止符
@@ -96,7 +104,15 @@ public class SmsAnalysis {
          * 完整协议
          */
         nodeInfo.setWsn(wsn);
+
+        /**
+         * 数据更新
+         */
+        nodeInfo.setData_analysis(AgricultureAnalysis.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
+
         return nodeInfo;
+
+
     }
 
 

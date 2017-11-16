@@ -71,6 +71,18 @@ public class NodeInfo {
      * 完整协议
      */
     private String wsn;
+    /**
+     * 完整协议
+     */
+    private String data_analysis;
+
+    public String getData_analysis() {
+        return data_analysis;
+    }
+
+    public void setData_analysis(String data_analysis) {
+        this.data_analysis = data_analysis;
+    }
 
     public String getWsn() {
         return wsn;

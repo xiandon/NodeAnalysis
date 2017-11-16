@@ -96,6 +96,10 @@ public class NodeInfoAnalysis {
          */
         nodeInfo.setWsn(wsn);
 
+        /**
+         * 数据更新
+         */
+
 
         return nodeInfo;
     }
