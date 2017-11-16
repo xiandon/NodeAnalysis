@@ -58,7 +58,7 @@ public class AgricultureAnalysis {
                 data = fx;
                 break;
 
-            case "83":
+            case "006083":
                 double xx = (Integer.valueOf(node_data.substring(6, 10), 16));
                 double x22 = xx / 5 - 30;
                 double yy = (Integer.valueOf(node_data.substring(10, 14), 16));
@@ -67,7 +67,7 @@ public class AgricultureAnalysis {
                 data = "温度值：" + df.format(x22) + "℃; 湿度值：" + df.format(y22) + "%RH";
 
                 break;
-            case "07":
+            case "006007":
                 int dataYuDi = (Integer.valueOf(node_data.substring(6, 10), 16));
                 String raindrop = null;
                 if (dataYuDi == 0) {
@@ -77,7 +77,7 @@ public class AgricultureAnalysis {
                 }
                 data = raindrop;
                 break;
-            case "37":
+            case "006037":
                 String irrigation = null;
 
                 if (node_data.substring(6, 10).equals("0000")) {
@@ -87,7 +87,7 @@ public class AgricultureAnalysis {
                 }
                 data = irrigation;
                 break;
-            case "0c":
+            case "00600c":
                 String smoke = null;
                 int i = (Integer.valueOf(node_data.substring(6, 10), 16));
                 if (i == 0) {
@@ -98,16 +98,16 @@ public class AgricultureAnalysis {
                 }
                 data = smoke;
                 break;
-            case "84":
+            case "006084":
                 int co2 = hexToTen(node_data.substring(6, 10));
                 data = co2 + "PPM";
                 break;
-            case "86":
+            case "006086":
                 int tTemperature = (Integer.valueOf(node_data.substring(6, 10), 16));
                 int tHumidity = (Integer.valueOf(node_data.substring(10, 14), 16));
                 data = "温度:" + df.format(tTemperature / 10) + "℃;" + "湿度:" + df.format(tHumidity / 10) + "%RH";
                 break;
-            case "39":
+            case "006039":
                 int alarm = hexToTen(node_data.substring(6, 10));
                 String sAlarm = null;
                 if (alarm == 0) {
@@ -117,7 +117,7 @@ public class AgricultureAnalysis {
                 }
                 data = sAlarm;
                 break;
-            case "31":
+            case "006031":
                 int ventilation = hexToTen(node_data.substring(6, 10));
                 String sVentilation = null;
                 if (ventilation == 0) {
@@ -127,7 +127,7 @@ public class AgricultureAnalysis {
                 }
                 data = sVentilation;
                 break;
-            case "38":
+            case "006038":
                 int spray = hexToTen(node_data.substring(6, 10));
                 String sSpray = null;
                 if (spray == 0) {
@@ -137,7 +137,7 @@ public class AgricultureAnalysis {
                 }
                 data = sSpray;
                 break;
-            case "32":
+            case "006032":
                 int light = hexToTen(node_data.substring(6, 10));
                 String sLight = null;
                 if (light == 0) {
@@ -147,11 +147,11 @@ public class AgricultureAnalysis {
                 }
                 data = sLight;
                 break;
-            case "01":
+            case "006001":
                 int illumination = hexToTen(node_data.substring(6, 10));
                 data = illumination * 400 + "LUX";
                 break;
-            case "80":
+            case "006080":
                     /*水位*/
                 double iWater = hexToTen(node_data.substring(6, 10));
                 String sHeight = "";
@@ -159,7 +159,7 @@ public class AgricultureAnalysis {
                 sHeight = df.format(dHeight) + "厘米";
                 data = "当前水位：" + sHeight;
                 break;
-            case "81":
+            case "006081":
                     /*水质PH值*/
                 double iPH = hexToTen(node_data.substring(6, 10));
                 String sPH = "";
@@ -169,7 +169,7 @@ public class AgricultureAnalysis {
                 }
                 data = "当前PH值：" + sPH;
                 break;
-            case "87":
+            case "006087":
                     /*液体浊度*/
                     /*需要校准*/
 
@@ -178,12 +178,12 @@ public class AgricultureAnalysis {
                 data = "浑浊度：" + df.format(Math.abs(bTurbid)) + "%";
 
                 break;
-            case "88":
+            case "006088":
                     /*液体杂质*/
                 double iImpurities = hexToTen(node_data.substring(6, 10));
                 data = "当前TDS：" + df.format(iImpurities / 100) + "ppm";
                 break;
-            case "89":
+            case "006089":
                     /*模拟CO2*/
                 double iCO2 = hexToTen(node_data.substring(6, 10));
                 String sCO2 = "";
