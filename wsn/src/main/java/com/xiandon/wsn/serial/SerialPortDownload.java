@@ -42,7 +42,9 @@ public class SerialPortDownload {
 
     // 执行下发的动作
     public void DownData(String str) {
-        System.out.println("下发xxxx = " + str);
+        if (str == null || str.length() < 30) {
+            return;
+        }
         byte[] ff = string2byteArrays(str);
         try {
             mSerialPort.getOutputStream().write(ff, 0, ff.length);
