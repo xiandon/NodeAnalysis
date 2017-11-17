@@ -64,7 +64,7 @@ public class AgricultureAnalysis {
                 double yy = (Integer.valueOf(node_data.substring(10, 14), 16));
                 double y22 = 0;
                 y22 = yy * 0.2;
-                data = "温度值：" + df.format(x22) + "℃; 湿度值：" + df.format(y22) + "%RH";
+                data = "温度:" + df.format(x22) + "℃ |  湿度值:" + df.format(y22) + "%RH";
 
                 break;
             case "006007":
@@ -100,12 +100,12 @@ public class AgricultureAnalysis {
                 break;
             case "006084":
                 int co2 = hexToTen(node_data.substring(6, 10));
-                data = co2 + "PPM";
+                data = co2 + "";
                 break;
             case "006086":
                 int tTemperature = (Integer.valueOf(node_data.substring(6, 10), 16));
                 int tHumidity = (Integer.valueOf(node_data.substring(10, 14), 16));
-                data = "温度:" + df.format(tTemperature / 10) + "℃;" + "湿度:" + df.format(tHumidity / 10) + "%RH";
+                data = "湿度:" + df.format(tHumidity / 10) + "%RH | " + "温度:" + df.format(tTemperature / 10) + "℃";
                 break;
             case "006039":
                 int alarm = hexToTen(node_data.substring(6, 10));
@@ -149,7 +149,7 @@ public class AgricultureAnalysis {
                 break;
             case "006001":
                 int illumination = hexToTen(node_data.substring(6, 10));
-                data = illumination * 400 + "LUX";
+                data = illumination * 400 + "";
                 break;
             case "006080":
                     /*水位*/
@@ -189,7 +189,7 @@ public class AgricultureAnalysis {
                 String sCO2 = "";
                 double iCO2Concentration = iCO2 / 0.096;
                 if (iCO2Concentration - 200 > 0) {
-                    sCO2 = "当前浓度：" + df.format(iCO2Concentration - 200) + "ppm";
+                    sCO2 = df.format(iCO2Concentration - 200) + "";
                 } else {
                     sCO2 = "测试错误";
                 }

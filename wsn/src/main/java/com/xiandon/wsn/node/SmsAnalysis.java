@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by pen on 2017/11/14.
@@ -164,5 +166,25 @@ public class SmsAnalysis {
             }
         }
         return "待添加类型";
+    }
+
+    public static String[] extractAmountMsg(String ptCasinoMsg) {
+        String returnAmounts[] = new String[2];
+        ptCasinoMsg = ptCasinoMsg.replace(" | ", " ");
+        String[] amounts = ptCasinoMsg.split(" ");
+        for (int i = 0; i < amounts.length; i++) {
+            Pattern p = Pattern.compile("(\\d+\\.\\d+)");
+            Matcher m = p.matcher(amounts[i]);
+            if (m.find()) {
+                returnAmounts[i] = m.group(1);
+            } else {
+                p = Pattern.compile("(\\d+)");
+                m = p.matcher(amounts[i]);
+                if (m.find()) {
+                    returnAmounts[i] = m.group(1);
+                }
+            }
+        }
+        return returnAmounts;
     }
 }
