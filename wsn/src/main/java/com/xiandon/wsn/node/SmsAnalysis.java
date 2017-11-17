@@ -168,7 +168,7 @@ public class SmsAnalysis {
         return "待添加类型";
     }
 
-    public static String[] extractAmountMsg(String ptCasinoMsg) {
+    public String[] extractAmountMsg(String ptCasinoMsg) {
         String returnAmounts[] = new String[2];
         ptCasinoMsg = ptCasinoMsg.replace(" | ", " ");
         String[] amounts = ptCasinoMsg.split(" ");
