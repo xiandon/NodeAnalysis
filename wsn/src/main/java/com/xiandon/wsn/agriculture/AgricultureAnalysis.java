@@ -103,8 +103,8 @@ public class AgricultureAnalysis {
                 data = co2 + "";
                 break;
             case "006086":
-                int tTemperature = (Integer.valueOf(node_data.substring(6, 10), 16));
-                int tHumidity = (Integer.valueOf(node_data.substring(10, 14), 16));
+                int tHumidity = (Integer.valueOf(node_data.substring(6, 10), 16));
+                int tTemperature = (Integer.valueOf(node_data.substring(10, 14), 16));
                 data = "湿度:" + df.format(tHumidity / 10) + "%RH | " + "温度:" + df.format(tTemperature / 10) + "℃";
                 break;
             case "006039":
