@@ -169,7 +169,7 @@ public class SmsAnalysis {
     }
 
     public String[] extractAmountMsg(String ptCasinoMsg) {
-        String returnAmounts[] = new String[2];
+        String returnAmounts[] = new String[4];
         ptCasinoMsg = ptCasinoMsg.replace(" | ", " ");
         String[] amounts = ptCasinoMsg.split(" ");
         for (int i = 0; i < amounts.length; i++) {
