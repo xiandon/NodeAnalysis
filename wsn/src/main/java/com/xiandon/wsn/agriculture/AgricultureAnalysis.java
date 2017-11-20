@@ -63,8 +63,8 @@ public class AgricultureAnalysis {
                 double x22 = xx / 5 - 30;
                 double yy = (Integer.valueOf(node_data.substring(10, 14), 16));
                 double y22 = 0;
-                y22 = yy * 0.2;
-                data = "温度:" + df.format(x22) + "℃ |  湿度值:" + df.format(y22) + 0.5 + "%RH";
+                y22 = yy * 0.2 + 0.5;
+                data = "温度:" + df.format(x22) + "℃ |  湿度值:" + df.format(y22) + "%RH";
 
                 break;
             case "006007":
