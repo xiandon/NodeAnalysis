@@ -64,7 +64,7 @@ public class AgricultureAnalysis {
                 double yy = (Integer.valueOf(node_data.substring(10, 14), 16));
                 double y22 = 0;
                 y22 = yy * 0.2 + 0.5;
-                data = "温度:" + df.format(x22) + "℃ |  湿度值:" + df.format(y22) + "%RH";
+                data = "温度:" + df.format(x22) + "℃ | 湿度值:" + df.format(y22) + "%RH";
 
                 break;
             case "006007":
@@ -105,7 +105,7 @@ public class AgricultureAnalysis {
             case "006086":
                 int tHumidity = (Integer.valueOf(node_data.substring(6, 10), 16));
                 int tTemperature = (Integer.valueOf(node_data.substring(10, 14), 16));
-                data = "湿度:" + df.format(tHumidity / 10) + "%RH | " + "温度:" + df.format(tTemperature / 10) + "℃";
+                data = "湿度:" + df.format(tHumidity / 10) + "%RH | 温度:" + df.format(tTemperature / 10) + "℃";
                 break;
             case "006039":
                 int alarm = hexToTen(node_data.substring(6, 10));
