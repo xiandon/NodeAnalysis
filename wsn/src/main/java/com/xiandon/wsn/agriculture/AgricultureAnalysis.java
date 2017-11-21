@@ -191,7 +191,7 @@ public class AgricultureAnalysis {
                 if (iCO2Concentration - 200 > 0) {
                     sCO2 = df.format(iCO2Concentration - 200) + "";
                 } else {
-                    sCO2 = "测试错误";
+                    sCO2 = "传感器错误";
                 }
                 data = sCO2;
                 break;
