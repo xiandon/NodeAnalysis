@@ -64,6 +64,9 @@ public class AgricultureAnalysis {
                 double yy = (Integer.valueOf(node_data.substring(10, 14), 16));
                 double y22 = 0;
                 y22 = yy * 0.2 + 0.5;
+                if (y22 > 100) {
+                    y22 = 99.9;
+                }
                 data = "温度:" + df.format(x22) + "℃ | 湿度值:" + df.format(y22) + "%RH";
 
                 break;
@@ -199,9 +202,9 @@ public class AgricultureAnalysis {
                 String switch_status = data.substring(0, 4);
                 String kai = null;
                 if (switch_status.equals("0001")) {
-                    kai = "开";
+                    kai = "打开";
                 } else if (switch_status.equals("0002")) {
-                    kai = "关";
+                    kai = "关闭";
                 } else {
                     kai = "no_data";
                 }
