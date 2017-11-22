@@ -31,6 +31,13 @@ public class SmsAnalysis {
 
     public NodeInfo analysis(String wsn) throws IOException, XmlPullParserException {
 
+        String sLength = wsn.substring(6, 10);
+        int iLength = Integer.parseInt(sLength, 16);
+
+        if (iLength * 2 + 12 != wsn.length()) {
+            return null;
+        }
+
         NodeInfo nodeInfo = new NodeInfo();
         /**
          * 帧起始符
