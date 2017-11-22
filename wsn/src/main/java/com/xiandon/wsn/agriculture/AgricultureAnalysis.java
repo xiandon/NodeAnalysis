@@ -1,5 +1,7 @@
 package com.xiandon.wsn.agriculture;
 
+import android.util.Log;
+
 import java.text.DecimalFormat;
 
 /**
@@ -209,7 +211,7 @@ public class AgricultureAnalysis {
                 data = sCO2;
                 break;
             case "0040":
-                String switch_status = data.substring(0, 4);
+                String switch_status = node_data.substring(0, 4);
                 String kai = null;
                 if (switch_status.equals("0001")) {
                     kai = "打开";
