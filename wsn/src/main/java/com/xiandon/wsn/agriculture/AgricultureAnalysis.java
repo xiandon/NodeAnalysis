@@ -1,6 +1,5 @@
 package com.xiandon.wsn.agriculture;
 
-import android.util.Log;
 
 import java.text.DecimalFormat;
 
@@ -207,7 +206,7 @@ public class AgricultureAnalysis {
                 if (iCO2Concentration - 200 > 0) {
                     sCO2 = df.format(iCO2Concentration - 200) + "";
                 } else {
-                    sCO2 = "传感器错误";
+                    sCO2 = "0";
                 }
                 data = sCO2;
                 break;
