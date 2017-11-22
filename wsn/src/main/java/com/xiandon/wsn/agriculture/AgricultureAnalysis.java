@@ -217,8 +217,8 @@ public class AgricultureAnalysis {
                     kai = "打开";
                 } else if (switch_status.equals("0002")) {
                     kai = "关闭";
-                } else {
-                    kai = "no_data";
+                } else if (switch_status.equals("0000")) {
+                    kai = "关闭";
                 }
                 data = "开关状态：" + kai;
                 break;
