@@ -184,6 +184,10 @@
         <node_num>006089</node_num>
         <node_name>模拟CO2</node_name>
     </node>
+    <node>
+        <node_num>006043</node_num>
+        <node_name>模拟CO2</node_name>
+    </node>
 
 
 </nodes>

@@ -150,6 +150,16 @@ public class AgricultureAnalysis {
                 }
                 data = sLight;
                 break;
+            case "006043":
+                int wind = hexToTen(node_data.substring(6, 10));
+                String sWind = null;
+                if (wind == 0) {
+                    sWind = "打开";
+                } else {
+                    sWind = "关闭";
+                }
+                data = sWind;
+                break;
             case "006001":
                 int illumination = hexToTen(node_data.substring(6, 10));
                 data = illumination * 400 + "";
