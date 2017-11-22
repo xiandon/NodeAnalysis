@@ -56,6 +56,7 @@ public class AgricultureAnalysis {
                     fx = "西北偏北";
                 } else {
                     // other
+                    fx = "传感器错误";
                 }
                 data = fx;
                 break;
