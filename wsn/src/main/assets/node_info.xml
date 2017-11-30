@@ -188,6 +188,42 @@
         <node_num>006043</node_num>
         <node_name>遮阳</node_name>
     </node>
+    <node>
+        <node_num>0060dd</node_num>
+        <node_name>公交车站</node_name>
+    </node>
+    <node>
+        <node_num>006022</node_num>
+        <node_name>高速ETC</node_name>
+    </node>
+    <node>
+        <node_num>006033</node_num>
+        <node_name>红绿灯</node_name>
+    </node>
+    <node>
+        <node_num>006044</node_num>
+        <node_name>智能小车</node_name>
+    </node>
+    <node>
+        <node_num>006055</node_num>
+        <node_name>建筑灯</node_name>
+    </node>
+    <node>
+        <node_num>006077</node_num>
+        <node_name>停车场车位剩余</node_name>
+    </node>
+    <node>
+        <node_num>006088</node_num>
+        <node_name>停车场入口收费</node_name>
+    </node>
+    <node>
+        <node_num>006099</node_num>
+        <node_name>停车场出口收费</node_name>
+    </node>
+    <node>
+        <node_num>0060ee</node_num>
+        <node_name>路灯系统</node_name>
+    </node>
 
 
 </nodes>

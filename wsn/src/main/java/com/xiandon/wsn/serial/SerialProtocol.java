@@ -115,6 +115,29 @@ public class SerialProtocol {
         return rel;
     }
 
+    /**
+     * 16进制编码转字符串
+     *
+     * @param s
+     * @return
+     */
+    public static String toStringHex(String s) {
+        byte[] baKeyword = new byte[s.length() / 2];
+        for (int i = 0; i < baKeyword.length; i++) {
+            try {
+                baKeyword[i] = (byte) (0xff & Integer.parseInt(s.substring(i * 2, i * 2 + 2), 16));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            s = new String(baKeyword, "utf-8");// UTF-16le:Not
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return s;
+    }
+
     static public ArrayList<String> aReceive(byte[] dataReceived, int start) {
         ArrayList<String> slRel = new ArrayList<String>();
         if (!bIsInitFrameHdr) {
