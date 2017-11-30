@@ -20,24 +20,24 @@ public class TrafficAnalysis {
             case "006022":
                 String etcNum = node_data.substring(2, 6);
                 String strSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcNum + "and" + strSwitch;
+                strAnalysis = etcNum + "--" + strSwitch;
                 break;
             case "006033":
                 String redLightNum = node_data.substring(2, 6);
                 String redLightGroup = node_data.substring(6, 8);
                 String redLightStatus = checkRedLight(node_data.substring(8, 10));
-                strAnalysis = redLightNum + "and" + redLightGroup + "and" + redLightStatus;
+                strAnalysis = redLightNum + "--" + redLightGroup + "--" + redLightStatus;
                 break;
             case "006044":
                 String strCarLicense = SerialProtocol.toStringHex(node_data.substring(2, 6));
                 String strCarType = carType(node_data.substring(6, 8));
                 String strCarAddress = SerialProtocol.toStringHex(node_data.substring(10, 18));
-                strAnalysis = strCarLicense + "and" + strCarType + "and" + strCarAddress;
+                strAnalysis = strCarLicense + "--" + strCarType + "--" + strCarAddress;
                 break;
             case "006055":
                 String strBuildingNum = node_data.substring(2, 6);
                 String strBuildingStatus = checkBuilding(node_data.substring(6, 10));
-                strAnalysis = strBuildingNum + "and" + strBuildingStatus;
+                strAnalysis = strBuildingNum + "--" + strBuildingStatus;
                 break;
             case "006077":
                 String strLast = node_data.substring(2, 6);
@@ -47,12 +47,12 @@ public class TrafficAnalysis {
             case "006088":
                 String etcEntranceNum = node_data.substring(2, 6);
                 String strEntranceSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcEntranceNum + "and" + strEntranceSwitch;
+                strAnalysis = etcEntranceNum + "--" + strEntranceSwitch;
                 break;
             case "006099":
                 String etcExitNum = node_data.substring(2, 6);
                 String strExitSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcExitNum + "and" + strExitSwitch;
+                strAnalysis = etcExitNum + "--" + strExitSwitch;
                 break;
             case "0060dd":
                 String strBusStop = checkBusStop(node_data.substring(2, 6));
