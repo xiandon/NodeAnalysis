@@ -194,7 +194,7 @@
     </node>
     <node>
         <node_num>006022</node_num>
-        <node_name>高速ETC</node_name>
+        <node_name>高速ETC收费</node_name>
     </node>
     <node>
         <node_num>006033</node_num>
@@ -214,7 +214,7 @@
     </node>
     <node>
         <node_num>006088</node_num>
-        <node_name>停车场入口收费</node_name>
+        <node_name>停车场入口</node_name>
     </node>
     <node>
         <node_num>006099</node_num>
