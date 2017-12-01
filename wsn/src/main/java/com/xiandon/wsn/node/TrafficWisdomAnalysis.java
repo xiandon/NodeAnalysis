@@ -134,7 +134,7 @@ public class TrafficWisdomAnalysis {
      * @throws IOException
      */
     private String getName(String node_num) throws XmlPullParserException, IOException {
-        InputStream inputStream = mContext.getAssets().open("node_info.xml");
+        InputStream inputStream = mContext.getAssets().open("node_info_traffic.xml");
         List<NodeForValue> list = null;
         NodeForValue nodeForValue = null;
         XmlPullParser parser = Xml.newPullParser();
