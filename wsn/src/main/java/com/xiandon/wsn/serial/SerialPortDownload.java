@@ -1,11 +1,15 @@
 package com.xiandon.wsn.serial;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.security.InvalidParameterException;
 
 import android_serialport_api.SerialPort;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by pen on 2017/11/15.
@@ -42,6 +46,7 @@ public class SerialPortDownload {
 
     // 执行下发的动作
     public void DownData(String str) {
+        Log.i(TAG, "DownData: " + str);
         if (str == null || str.length() < 30) {
             return;
         }
