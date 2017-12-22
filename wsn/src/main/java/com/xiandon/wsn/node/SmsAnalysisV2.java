@@ -39,6 +39,10 @@ public class SmsAnalysisV2 {
             return null;
         }
 
+        if (wsn.length() < 35) {
+            return null;
+        }
+
         NodeInfo nodeInfo = new NodeInfo();
         /**
          * 帧起始符
