@@ -224,62 +224,6 @@
         <node_num>0060ee</node_num>
         <node_name>路灯系统</node_name>
     </node>
-    <node>
-        <node_num>0031</node_num>
-        <node_name>通风</node_name>
-    </node>
-    <node>
-        <node_num>0032</node_num>
-        <node_name>灯光</node_name>
-    </node>
-    <node>
-        <node_num>0037</node_num>
-        <node_name>灌溉</node_name>
-    </node>
-    <node>
-        <node_num>0038</node_num>
-        <node_name>喷雾</node_name>
-    </node>
-    <node>
-        <node_num>0039</node_num>
-        <node_name>警报</node_name>
-    </node>
-    <node>
-        <node_num>0080</node_num>
-        <node_name>水位</node_name>
-    </node>
-    <node>
-        <node_num>0081</node_num>
-        <node_name>水质PH值</node_name>
-    </node>
-    <node>
-        <node_num>0082</node_num>
-        <node_name>风向</node_name>
-    </node>
-    <node>
-        <node_num>0083</node_num>
-        <node_name>土壤温湿度</node_name>
-    </node>
-    <node>
-        <node_num>0084</node_num>
-        <node_name>CO2浓度</node_name>
-    </node>
-    <node>
-        <node_num>0086</node_num>
-        <node_name>室内温湿度</node_name>
-    </node>
-    <node>
-        <node_num>0087</node_num>
-        <node_name>液体浊度</node_name>
-    </node>
-    <node>
-        <node_num>0088</node_num>
-        <node_name>液体杂质</node_name>
-    </node>
-    <node>
-        <node_num>0089</node_num>
-        <node_name>模拟CO2</node_name>
-    </node>
 
 
 </nodes>
