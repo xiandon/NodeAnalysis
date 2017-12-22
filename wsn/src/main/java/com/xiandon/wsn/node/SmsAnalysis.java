@@ -117,7 +117,7 @@ public class SmsAnalysis {
         /**
          * 数据更新
          */
-        nodeInfo.setData_analysis(AgricultureAnalysis.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
+        nodeInfo.setData_analysis(AgricultureAnalysis.analysis(node_type, "00" + wsn.substring(28, wsn.length() - 4)));
 
         return nodeInfo;
 
