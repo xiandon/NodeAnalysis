@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Xml;
 
 import com.xiandon.wsn.agriculture.AgricultureAnalysis;
+import com.xiandon.wsn.agriculture.AgricultureAnalysisV2;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -21,11 +22,11 @@ import java.util.regex.Pattern;
  * 单例模式
  */
 
-public class SmsAnalysis {
+public class SmsAnalysisV2 {
     private Context mContext;
 
 
-    public SmsAnalysis(Context context) {
+    public SmsAnalysisV2(Context context) {
         mContext = context;
     }
 
@@ -58,7 +59,7 @@ public class SmsAnalysis {
         /**
          * 传感器类型英文编号
          */
-        nodeInfo.setNode_num(wsn.substring(10, 14) + wsn.substring(28, 30));
+        nodeInfo.setNode_num(wsn.substring(10, 14));
 
         /**
          * 来源地址，传感器中文名称
@@ -76,8 +77,7 @@ public class SmsAnalysis {
         /**
          * 来源地址，传感器节点编号
          */
-        nodeInfo.setNode_nums(wsn.substring(14, 18) + wsn.substring(28, 30));
-//        nodeInfo.setNode_nums(wsn.substring(14, 18));
+        nodeInfo.setNode_nums(wsn.substring(14, 18));
 
         /**
          * 初始地址，系统板号
@@ -117,7 +117,7 @@ public class SmsAnalysis {
         /**
          * 数据更新
          */
-        nodeInfo.setData_analysis(AgricultureAnalysis.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
+        nodeInfo.setData_analysis(AgricultureAnalysisV2.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
 
         return nodeInfo;
 
