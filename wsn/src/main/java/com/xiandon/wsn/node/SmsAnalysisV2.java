@@ -35,7 +35,7 @@ public class SmsAnalysisV2 {
         String sLength = wsn.substring(6, 10);
         int iLength = Integer.parseInt(sLength, 16);
 
-        if (iLength * 2 + 12 != wsn.length()) {
+        if (iLength * 2 + 10 != wsn.length()) {
             return null;
         }
 
