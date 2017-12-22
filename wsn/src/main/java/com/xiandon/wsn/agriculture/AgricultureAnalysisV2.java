@@ -17,7 +17,7 @@ public class AgricultureAnalysisV2 {
     public static String analysis(String node_num, String node_data) {
         String data = null;
         switch (node_num) {
-            case "006082":
+            case "0082":
                 String fx = null;
                 double windDirection = (Integer.valueOf(node_data.substring(0, 4), 16));
                 double fx1 = windDirection / 100;
@@ -60,7 +60,7 @@ public class AgricultureAnalysisV2 {
                 data = fx;
                 break;
 
-            case "006083":
+            case "0083":
                 double xx = (Integer.valueOf(node_data.substring(0, 4), 16));
                 double x22 = xx / 5 - 30;
                 double yy = (Integer.valueOf(node_data.substring(4, 8), 16));
@@ -72,7 +72,7 @@ public class AgricultureAnalysisV2 {
                 data = df.format(x22) + "℃ | " + df.format(y22) + "%RH";
 
                 break;
-            case "006007":
+            case "0007":
                 int dataYuDi = (Integer.valueOf(node_data.substring(0, 4), 16));
                 String raindrop = null;
                 if (dataYuDi == 0) {
@@ -82,7 +82,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = raindrop;
                 break;
-            case "006037":
+            case "0037":
                 String irrigation = null;
 
                 if (node_data.substring(0, 4).equals("0000")) {
@@ -92,7 +92,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = irrigation;
                 break;
-            case "00600c":
+            case "000c":
                 String smoke = null;
                 int i = (Integer.valueOf(node_data.substring(0, 4), 16));
                 if (i == 0) {
@@ -103,16 +103,16 @@ public class AgricultureAnalysisV2 {
                 }
                 data = smoke;
                 break;
-            case "006084":
+            case "0084":
                 int co2 = hexToTen(node_data.substring(0, 4));
                 data = co2 + "";
                 break;
-            case "006086":
+            case "0086":
                 int tHumidity = (Integer.valueOf(node_data.substring(6, 10), 16));
                 int tTemperature = (Integer.valueOf(node_data.substring(10, 14), 16));
                 data = df.format(tHumidity / 10) + "%RH | " + df.format(tTemperature / 10) + "℃";
                 break;
-            case "006039":
+            case "0039":
                 int alarm = hexToTen(node_data.substring(0, 4));
                 String sAlarm = null;
                 if (alarm == 0) {
@@ -122,7 +122,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = sAlarm;
                 break;
-            case "006031":
+            case "0031":
                 int ventilation = hexToTen(node_data.substring(0, 4));
                 String sVentilation = null;
                 if (ventilation == 0) {
@@ -132,7 +132,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = sVentilation;
                 break;
-            case "006038":
+            case "0038":
                 int spray = hexToTen(node_data.substring(0, 4));
                 String sSpray = null;
                 if (spray == 0) {
@@ -142,7 +142,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = sSpray;
                 break;
-            case "006032":
+            case "0032":
                 int light = hexToTen(node_data.substring(0, 4));
                 String sLight = null;
                 if (light == 0) {
@@ -152,7 +152,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = sLight;
                 break;
-            case "006043":
+            case "0043":
                 int wind = hexToTen(node_data.substring(0, 4));
                 String sWind = null;
                 if (wind == 0) {
@@ -162,11 +162,11 @@ public class AgricultureAnalysisV2 {
                 }
                 data = sWind;
                 break;
-            case "006001":
+            case "0001":
                 int illumination = hexToTen(node_data.substring(0, 4));
                 data = illumination * 400 + "";
                 break;
-            case "006080":
+            case "0080":
                     /*水位*/
                 double iWater = hexToTen(node_data.substring(0, 4));
                 String sHeight = "";
@@ -174,7 +174,7 @@ public class AgricultureAnalysisV2 {
                 sHeight = df.format(dHeight) + "厘米";
                 data = "当前水位：" + sHeight;
                 break;
-            case "006081":
+            case "0081":
                     /*水质PH值*/
                 double iPH = hexToTen(node_data.substring(0, 4));
                 String sPH = "";
@@ -184,7 +184,7 @@ public class AgricultureAnalysisV2 {
                 }
                 data = "当前PH值：" + sPH;
                 break;
-            case "006087":
+            case "0087":
                     /*液体浊度*/
                     /*需要校准*/
 
@@ -193,12 +193,12 @@ public class AgricultureAnalysisV2 {
                 data = "浑浊度：" + df.format(Math.abs(bTurbid)) + "%";
 
                 break;
-            case "006088":
+            case "0088":
                     /*液体杂质*/
                 double iImpurities = hexToTen(node_data.substring(0, 4));
                 data = "当前TDS：" + df.format(iImpurities / 100) + "ppm";
                 break;
-            case "006089":
+            case "0089":
                     /*模拟CO2*/
                 double iCO2 = hexToTen(node_data.substring(0, 4));
                 String sCO2 = "";
