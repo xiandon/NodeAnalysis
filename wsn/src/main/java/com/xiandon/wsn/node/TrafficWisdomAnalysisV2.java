@@ -77,7 +77,7 @@ public class TrafficWisdomAnalysisV2 {
         /**
          * 来源地址，传感器节点编号
          */
-        nodeInfo.setNode_nums(wsn.substring(14, 18) + wsn.substring(28, 30));
+        nodeInfo.setNode_nums(wsn.substring(14, 18));
 
 
         /**
