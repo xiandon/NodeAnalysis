@@ -34,9 +34,9 @@ public class TrafficAnalysisV2 {
 
                 break;
             case "0044":
-                String strCarLicense = SerialProtocol.toStringHex(node_data.substring(2, 6));
-                String strCarType = carType(node_data.substring(6, 8));
-                String strCarAddress = SerialProtocol.toStringHex(node_data.substring(12, 20));
+                String strCarLicense = SerialProtocol.toStringHex(node_data.substring(0, 4));
+                String strCarType = carType(node_data.substring(4, 8));
+                String strCarAddress = SerialProtocol.toStringHex(node_data.substring(10, 18));
                 strAnalysis = strCarLicense + "--" + strCarType + "--" + strCarAddress.toString();
                 break;
             case "0055":
