@@ -35,7 +35,7 @@ public class TrafficWisdomAnalysisV2 {
         String sLength = wsn.substring(6, 10);
         int iLength = Integer.parseInt(sLength, 16);
 
-        if (iLength * 2 + 12 != wsn.length()) {
+        if (iLength * 2 + 10 != wsn.length()) {
             return null;
         }
 
@@ -59,7 +59,7 @@ public class TrafficWisdomAnalysisV2 {
         /**
          * 传感器类型英文编号
          */
-        nodeInfo.setNode_num(wsn.substring(10, 14) + wsn.substring(28, 30));
+        nodeInfo.setNode_num(wsn.substring(10, 14));
 
         /**
          * 来源地址，传感器中文名称
