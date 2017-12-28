@@ -66,7 +66,7 @@ public class TrafficWisdomAnalysisV2 {
          */
         String node_type;
         if (wsn.substring(10, 14).equals("0060")) {
-            node_type = wsn.substring(10, 14) + wsn.substring(28, 30);
+            node_type = wsn.substring(10, 14);
         } else if (wsn.substring(10, 14).equals("0040")) {
             node_type = wsn.substring(10, 14);
         } else {
