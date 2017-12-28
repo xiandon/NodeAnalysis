@@ -2,6 +2,7 @@ package com.xiandon.wsn.agriculture;
 
 
 import com.xiandon.wsn.serial.SerialProtocol;
+import com.xiandon.wsn.serial.SerialProtocolV2;
 
 
 /**
@@ -17,49 +18,54 @@ public class TrafficAnalysisV2 {
     public static String analysis(String node_num, String node_data) {
         String strAnalysis = "";
         switch (node_num) {
-            case "006022":
-                String etcNum = node_data.substring(2, 6);
-                String strSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcNum + "--" + strSwitch;
+            case "0022":
+                String strHeiPlant = SerialProtocolV2.toStringHex(node_data.substring(0, 4));//车牌号
+                String strHeiCarType = carType(node_data.substring(4, 6));//小车类型
+                String strHeiCharges = node_data.substring(6, 8);//需要扣的费用
+                String strHeiRemaining = node_data.substring(8, 10);//剩余费用
+                String etcHeiStatus = checkBuilding(node_data.substring(10, 12));//ETC状态
+                strAnalysis = strHeiPlant + "--" + strHeiCarType + "--" + strHeiCharges + "--" + strHeiRemaining + "--" + etcHeiStatus;
                 break;
-            case "006033":
-                String redLightNum = node_data.substring(2, 6);
-                String redLightGroup = node_data.substring(6, 8);
-                String redLightStatus = checkRedLight(node_data.substring(8, 10));
+            case "0033":
+                String redLightNum = node_data.substring(0, 4);
+                String redLightGroup = node_data.substring(4, 6);
+                String redLightStatus = checkRedLight(node_data.substring(6, 8));
                 strAnalysis = redLightNum + "--" + redLightGroup + "--" + redLightStatus;
+
                 break;
-            case "006044":
+            case "0044":
                 String strCarLicense = SerialProtocol.toStringHex(node_data.substring(2, 6));
                 String strCarType = carType(node_data.substring(6, 8));
                 String strCarAddress = SerialProtocol.toStringHex(node_data.substring(12, 20));
                 strAnalysis = strCarLicense + "--" + strCarType + "--" + strCarAddress.toString();
                 break;
-            case "006055":
+            case "0055":
                 String strBuildingNum = node_data.substring(2, 6);
                 String strBuildingStatus = checkBuilding(node_data.substring(6, 10));
                 strAnalysis = strBuildingNum + "--" + strBuildingStatus;
                 break;
-            case "006077":
-                String strLast = node_data.substring(2, 6);
+            case "0077":
+                String strPlant = SerialProtocolV2.toStringHex(node_data.substring(0, 4));//车牌号
+                String strInCarType = carType(node_data.substring(4, 6));//小车类型
+                String strLast = node_data.substring(6, 8);//剩余车位
+                String etcInStatus = checkBuilding(node_data.substring(8, 10));//ETC状态
                 int i = SerialProtocol.getSubString(SerialProtocol.hexString2binaryString(strLast), "1");
-                strAnalysis = i + "个";
+                strAnalysis = strPlant + "--" + strInCarType + "--" + etcInStatus + "--" + i + " 个 ";
                 break;
-            case "006088":
-                String etcEntranceNum = node_data.substring(2, 6);
-                String strEntranceSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcEntranceNum + "--" + strEntranceSwitch;
+            case "0099":
+                String strOutPlant = SerialProtocolV2.toStringHex(node_data.substring(0, 4));//车牌号
+                String strOutCarType = carType(node_data.substring(4, 6));//小车类型
+                String strOutCharges = node_data.substring(6, 8);//需要扣的费用
+                String strOutRemaining = node_data.substring(8, 10);//剩余费用
+                String etcOutStatus = checkBuilding(node_data.substring(10, 12));//ETC状态
+                strAnalysis = strOutPlant + "--" + strOutCarType + "--" + strOutCharges + "--" + strOutRemaining + "--" + etcOutStatus;
                 break;
-            case "006099":
-                String etcExitNum = node_data.substring(2, 6);
-                String strExitSwitch = checkSwitch(node_data.substring(6, 10));
-                strAnalysis = etcExitNum + "--" + strExitSwitch;
-                break;
-            case "0060dd":
-                String strBusStop = checkBusStop(node_data.substring(2, 6));
+            case "00dd":
+                String strBusStop = SerialProtocolV2.toStringHex(node_data.substring(0, 4));
                 strAnalysis = strBusStop;
                 break;
-            case "0060ee":
-                String strStreetLights = checkStreetLights(node_data.substring(6, 8));
+            case "00ee":
+                String strStreetLights = checkStreetLights(node_data.substring(2, 4));
                 strAnalysis = strStreetLights;
                 break;
         }
@@ -105,9 +111,9 @@ public class TrafficAnalysisV2 {
      * @return
      */
     private static String checkBuilding(String substring) {
-        if (substring.equals("0000")) {
+        if (substring.equals("01")) {
             return "打开";
-        } else if (substring.equals("0001")) {
+        } else if (substring.equals("02")) {
             return "关闭";
         } else {
             return "传感器信号异常";

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Xml;
 
 import com.xiandon.wsn.agriculture.TrafficAnalysis;
+import com.xiandon.wsn.agriculture.TrafficAnalysisV2;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -117,7 +118,7 @@ public class TrafficWisdomAnalysisV2 {
         /**
          * 数据更新
          */
-        nodeInfo.setData_analysis(TrafficAnalysis.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
+        nodeInfo.setData_analysis(TrafficAnalysisV2.analysis(node_type, wsn.substring(28, wsn.length() - 4)));
 
         return nodeInfo;
 

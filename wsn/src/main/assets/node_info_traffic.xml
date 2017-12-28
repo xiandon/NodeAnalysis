@@ -197,5 +197,38 @@
         <node_name>路灯系统</node_name>
     </node>
 
+    <node>
+        <node_num>0022</node_num>
+        <node_name>道路ETC</node_name>
+    </node>
+    <node>
+        <node_num>0033</node_num>
+        <node_name>红绿灯</node_name>
+    </node>
+    <node>
+        <node_num>0044</node_num>
+        <node_name>智能小车</node_name>
+    </node>
+    <node>
+        <node_num>0055</node_num>
+        <node_name>灯光控制</node_name>
+    </node>
+    <node>
+        <node_num>0077</node_num>
+        <node_name>停车场入口</node_name>
+    </node>
+    <node>
+        <node_num>0099</node_num>
+        <node_name>停车场出口</node_name>
+    </node>
+    <node>
+        <node_num>00dd</node_num>
+        <node_name>公交车站</node_name>
+    </node>
+    <node>
+        <node_num>00ee</node_num>
+        <node_name>路灯模式</node_name>
+    </node>
+
 
 </nodes>
