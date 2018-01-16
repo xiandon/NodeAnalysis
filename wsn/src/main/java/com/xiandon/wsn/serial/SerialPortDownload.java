@@ -2,6 +2,8 @@ package com.xiandon.wsn.serial;
 
 import android.util.Log;
 
+import com.xiandon.wsn.utils.DataUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -50,7 +52,7 @@ public class SerialPortDownload {
         if (str == null || str.length() < 30) {
             return;
         }
-        byte[] ff = string2byteArrays(str);
+        byte[] ff = DataUtils.string2byteArrays(str);
         try {
             mSerialPort.getOutputStream().write(ff, 0, ff.length);
         } catch (IOException e) {
@@ -58,20 +60,5 @@ public class SerialPortDownload {
         }
     }
 
-    // 字符转16进制byte[]
-    public byte[] string2byteArrays(String s) {// 字符变byte[]16
-        String ss = s.replace(" ", "");
-        int string_len = ss.length();
-        int len = string_len / 2;
-        if (string_len % 2 == 1) {
-            ss = "0" + ss;
-            string_len++;
-            len++;
-        }
-        byte[] a = new byte[len];
-        for (int i = 0; i < len; i++) {
-            a[i] = (byte) Integer.parseInt(ss.substring(2 * i, 2 * i + 2), 16);
-        }
-        return a;
-    }
+
 }
