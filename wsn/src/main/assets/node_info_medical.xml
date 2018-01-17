@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes>
     <node>
+        <node_num>0005</node_num>
+        <node_name>血压传感器</node_name>
+    </node>
+    <node>
+        <node_num>0012</node_num>
+        <node_name>血氧传感器</node_name>
+    </node>
+    <node>
+        <node_num>0014</node_num>
+        <node_name>心率传感器</node_name>
+    </node>
+    <node>
         <node_num>0015</node_num>
+        <node_name>心电传感器</node_name>
+    </node>
+    <node>
+        <node_num>001d</node_num>
         <node_name>体温传感器</node_name>
     </node>
 
