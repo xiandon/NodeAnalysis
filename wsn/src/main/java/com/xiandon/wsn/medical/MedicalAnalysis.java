@@ -122,9 +122,40 @@ public class MedicalAnalysis {
     private String analysisData(String strNodeNum, String strNodeData) {
         String data = "";
         switch (strNodeNum) {
+            case "0005":
+                /*血压*/
+                if (strNodeData.length() == 12) {
+                    if (strNodeData.substring(0, 2).equals("01")) {
+                        data = strNodeData.substring(2, 6) + "--" + strNodeData.substring(6, 10) + "--" + strNodeData.substring(10, 12);
+                    } else if (strNodeData.substring(0, 2).equals("02")) {
+                        data = "";
+                    }
+                } else if (strNodeData.length() == 6) {
+                    if (strNodeData.substring(0, 2).equals("00")) {
+                        data = strNodeData.substring(2, 6);
+                    }
+                }
+                break;
+            case "0012":
+                /*血氧传感器*/
+                if (strNodeData.length() == 12) {
+                    data = strNodeData.substring(0, 4) + "--" + strNodeData.substring(4, 8) + "--" + strNodeData.substring(8, 12);
+                }
+                break;
+            case "0014":
+                /*心率传感器*/
+                if (strNodeData.length() == 4) {
+                    data = strNodeData;
+                }
+                break;
+
             case "0015":
+                /*心电传感器*/
+                break;
+            case "001d":
+                /*人体温度*/
                 if (strNodeData.length() == 8) {
-                    data = strNodeData.substring(0, 2) + "." + strNodeData.substring(2, 4) + "--" + strNodeData.substring(4, 6) + "." + strNodeData.substring(6, 8);
+                    data = strNodeData.substring(0, 2) + "." + strNodeData.substring(2, 4) + "℃ --" + strNodeData.substring(4, 6) + "." + strNodeData.substring(6, 8) + "℃";
                 }
                 break;
             default:
