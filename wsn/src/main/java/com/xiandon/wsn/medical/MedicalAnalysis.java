@@ -155,7 +155,7 @@ public class MedicalAnalysis {
             case "001d":
                 /*人体温度*/
                 if (strNodeData.length() == 8) {
-                    data = strNodeData.substring(0, 2) + "." + strNodeData.substring(2, 4) + "℃ --" + strNodeData.substring(4, 6) + "." + strNodeData.substring(6, 8) + "℃";
+                    data = strNodeData.substring(0, 2) + "." + strNodeData.substring(2, 4) + "--" + strNodeData.substring(4, 6) + "." + strNodeData.substring(6, 8);
                 }
                 break;
             default:
