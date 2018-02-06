@@ -268,6 +268,16 @@ public class SmsAnalysisV2 {
                 }
                 data = sLight;
                 break;
+            case "0033":
+                int light33 = hexToTen(node_data.substring(0, 4));
+                String sLight33 = null;
+                if (light33 == 0) {
+                    sLight33 = "打开";
+                } else {
+                    sLight33 = "关闭";
+                }
+                data = sLight33;
+                break;
             case "0043":
                 int wind = hexToTen(node_data.substring(0, 4));
                 String sWind = null;

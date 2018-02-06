@@ -233,6 +233,10 @@
         <node_name>灯光</node_name>
     </node>
     <node>
+        <node_num>0033</node_num>
+        <node_name>加热系统</node_name>
+    </node>
+    <node>
         <node_num>0037</node_num>
         <node_name>灌溉</node_name>
     </node>
