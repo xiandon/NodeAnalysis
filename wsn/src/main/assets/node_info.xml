@@ -284,6 +284,9 @@
         <node_num>0089</node_num>
         <node_name>模拟CO2</node_name>
     </node>
-
+    <node>
+        <node_num>0043</node_num>
+        <node_name>遮阳电机</node_name>
+    </node>
 
 </nodes>
